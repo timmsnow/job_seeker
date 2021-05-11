@@ -1,0 +1,10 @@
+{
+  contact_id: contact.id,
+  job_id: contact.job_id,
+  name: contact.name,
+  email: contact.email,
+  job_title: contact.job_title,
+  linkedin_url: contact.linkedin_url,
+  phone: contact.phone,
+  date_contacted: contact.date_contacted,
+}
