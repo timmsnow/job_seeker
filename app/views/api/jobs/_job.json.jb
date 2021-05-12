@@ -1,0 +1,12 @@
+{
+  id: job.id,
+  company_name: job.company_name,
+  position: job.position,
+  description: job.description,
+  status: job.status,
+  salary: job.salary,
+  posting_url: job.posting_url,
+  notes: job.notes,
+  date_updated: job.date_updated,
+  user_id: job.user_id,
+}
