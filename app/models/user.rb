@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :contacts
+  has_many :metric_tables
 end
