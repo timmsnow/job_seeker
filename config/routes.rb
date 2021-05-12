@@ -24,7 +24,15 @@ Rails.application.routes.draw do
     get "/contacts/:id" => "contacts#show"
     patch "/contacts/:id" => "contacts#update"
     delete "/contacts/:id" => "contacts#destroy"
+
+    #METRICTABLE ROUTES
+    get "/metric_tables" => "metric_tables#index"
+    post "/metric_tables" => "metric_tables#create" 
+    get "/metric_tables/:id" => "metric_tables#show"
+    patch "/metric_tables/:id" => "metric_tables#update"
     end
+
+    
 
 
 end

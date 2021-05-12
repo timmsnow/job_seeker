@@ -1,0 +1,2 @@
+class MetricTable < ApplicationRecord
+end
