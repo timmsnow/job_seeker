@@ -17,6 +17,13 @@ Rails.application.routes.draw do
 
     #session routes
     post "/sessions" => "sessions#create"
+
+    # CONTACTS ROUTES
+    get "/contacts" => "contacts#index"
+    post "/contacts" => "contacts#create" 
+    get "/contacts/:id" => "contacts#show"
+    patch "/contacts/:id" => "contacts#update"
+    delete "/contacts/:id" => "contacts#destroy"
     end
 
 
