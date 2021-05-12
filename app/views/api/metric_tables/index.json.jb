@@ -1,0 +1,3 @@
+@metric_tables.map do |metric_table|
+  render partial: "metric_table.json.jb", locals: { metric_table: metric_table }
+end
