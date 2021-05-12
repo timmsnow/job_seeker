@@ -22,6 +22,6 @@ class Api::UsersController < ApplicationController
 
     user.save
 
-    render "show.json.jb"
+    render json: {message: "goals were saved"}
   end
 end
