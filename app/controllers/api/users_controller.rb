@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation]
+
     )
     if user.save
       render json: { message: "User created successfully" }, status: :created
@@ -14,4 +15,13 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    user = User.find(id: current_user.id)
+
+    user.user_goals = params[:user_goals] || user.user_goals
+
+    user.save
+
+    render "show.json.jb"
+  end
 end

@@ -3,4 +3,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :contacts
+
+  serialize :user_goals
 end
