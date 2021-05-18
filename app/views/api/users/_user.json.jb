@@ -1,4 +1,18 @@
 {
   name: user.name,
-  email: user.email
+  email: user.email,
+  jobs: user.jobs.map do |job|
+    {
+      id: job.id,
+      company_name: job.company_name,
+      position: job.position,
+      description: job.description,
+      status: job.status,
+      salary: job.salary,
+      posting_url: job.posting_url,
+      notes: job.notes,
+      date_updated: job.date_updated
+    }
+    
+  end,
 }
