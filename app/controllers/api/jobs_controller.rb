@@ -10,7 +10,8 @@ class Api::JobsController < ApplicationController
   end
 
   def create
-    job = Job.new(
+    @job = Job.new(
+      user_id: params[:user_id],
       company_name: params[:company_name],
       position: params[:position],
       description: params[:description],
@@ -19,9 +20,8 @@ class Api::JobsController < ApplicationController
       posting_url: params[:posting_url],
       notes: params[:notes],
       date_updated: params[:date_updated],
-      user_id: current_user.id,
     )
-    if job.save
+    if @job.save
       render json: { message: "job created successfully" }, status: :created
     else
       render json: { errors: job.errors.full_messages }, status: :bad_request
