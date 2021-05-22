@@ -24,7 +24,7 @@ class Api::JobsController < ApplicationController
     if @job.save
       render json: { message: "job created successfully" }, status: :created
     else
-      render json: { errors: job.errors.full_messages }, status: :bad_request
+      render json: { errors: @job.errors.full_messages }, status: :bad_request
     end
   end
 
