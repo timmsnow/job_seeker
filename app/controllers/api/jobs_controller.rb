@@ -52,10 +52,10 @@ class Api::JobsController < ApplicationController
   def destroy
     @job = Job.find(params[:id])
     job_id = params[:id]
-    if current_user.id == @job.user_id
-      @job = Job.find(job_id)
-      @job.destroy
-      render json: { message: "job DESTROYED" }
-    end
+    # if current_user.id == @job.user_id
+    @job = Job.find(job_id)
+    @job.destroy
+    render json: { message: "job DESTROYED" }
+    # end
   end
 end
