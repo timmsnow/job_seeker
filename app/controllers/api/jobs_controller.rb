@@ -22,7 +22,7 @@ class Api::JobsController < ApplicationController
       date_updated: params[:date_updated],
     )
     if @job.save
-      render json: { message: "job created successfully" }, status: :created
+      render "show.json.jb"
     else
       render json: { errors: @job.errors.full_messages }, status: :bad_request
     end
