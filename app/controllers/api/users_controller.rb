@@ -1,10 +1,10 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.where(id: current_user.id)
     render "index.json.jb"
   end
 
-  def show  
+  def show
     @user = User.find(params[:id])
     render "show.json.jb"
   end
@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password],
-      password_confirmation: params[:password_confirmation]
+      password_confirmation: params[:password_confirmation],
 
     )
     if user.save
@@ -28,15 +28,15 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @user.user_goals = {
-      quick_apply: params[:quick_apply], 
-      intentional_apply: params[:intentional_apply], 
-      info_interview: params[:info_interview], 
-      white_boarding_minutes: params[:white_boarding_minutes], 
-      portfolio_minutes: params[:portfolio_minutes] 
+      quick_apply: params[:quick_apply],
+      intentional_apply: params[:intentional_apply],
+      info_interview: params[:info_interview],
+      white_boarding_minutes: params[:white_boarding_minutes],
+      portfolio_minutes: params[:portfolio_minutes],
     }
 
     @user.save
 
-    render json: {message: "goals were saved"}
+    render json: { message: "goals were saved" }
   end
 end

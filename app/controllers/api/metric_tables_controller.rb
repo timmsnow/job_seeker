@@ -1,7 +1,12 @@
 class Api::MetricTablesController < ApplicationController
-
   def index
     @metric_tables = MetricTable.where(user_id: current_user.id)
+    render "index.json.jb"
+  end
+
+  def day_index
+    current_user_id = params[:id]
+    @metric_tables = MetricTable.where("user_id = ? AND created_at >= ?", current_user_id, 1.day.ago)
     render "index.json.jb"
   end
 
@@ -24,7 +29,7 @@ class Api::MetricTablesController < ApplicationController
     if @metric_table.save
       render "show.json.jb"
     else
-      render json: {errors: @metric_table.error.full_messages}, status: bad_request
+      render json: { errors: @metric_table.error.full_messages }, status: bad_request
     end
   end
 
@@ -37,14 +42,12 @@ class Api::MetricTablesController < ApplicationController
       @metric_table.info_interview = params[:info_interview] || @metric_table.info_interview
       @metric_table.white_boarding_minutes = params[:white_boarding_minutes] || @metric_table.white_boarding_minutes
       @metric_table.portfolio_minutes = params[:portfolio_minutes] || @metric_table.portfolio_minutes
-     
+
       if @metric_table.save
         render "show.json.jb"
       else
-        render json: {errors: @metric_table.error.full_messages}, status: bad_request
+        render json: { errors: @metric_table.error.full_messages }, status: bad_request
       end
     end
   end
-
-
 end
