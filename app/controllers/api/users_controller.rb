@@ -25,11 +25,17 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    user = User.find(id: current_user.id)
+    @user = User.find(params[:id])
 
-    user.user_goals = params[:user_goals] || user.user_goals
+    @user.user_goals = {
+      quick_apply: params[:quick_apply], 
+      intentional_apply: params[:intentional_apply], 
+      info_interview: params[:info_interview], 
+      white_boarding_minutes: params[:white_boarding_minutes], 
+      portfolio_minutes: params[:portfolio_minutes] 
+    }
 
-    user.save
+    @user.save
 
     render json: {message: "goals were saved"}
   end

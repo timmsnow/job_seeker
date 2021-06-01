@@ -1,6 +1,7 @@
 {
   name: user.name,
   email: user.email,
+  user_goals: user.user_goals,
   jobs: user.jobs.map do |job|
     {
       id: job.id,
@@ -13,6 +14,5 @@
       notes: job.notes,
       date_updated: job.date_updated
     }
-    
   end,
  }

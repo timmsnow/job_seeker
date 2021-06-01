@@ -12,7 +12,8 @@ class Api::MetricTablesController < ApplicationController
 
   def create
     @metric_table = MetricTable.new(
-      user_id: current_user.id,
+      # user_id: current_user.id,
+      user_id: params[:user_id],
       quick_apply: 0,
       intentional_apply: 0,
       info_interview: 0,
