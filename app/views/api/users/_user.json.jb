@@ -2,6 +2,10 @@
   name: user.name,
   email: user.email,
   user_goals: user.user_goals,
+  # metrics: user.metric_tables.map do |metric| {
+  #   quick_apply: metric.quick_apply,
+  # }
+  # end,
   jobs: user.jobs.map do |job|
     {
       id: job.id,
@@ -12,7 +16,7 @@
       salary: job.salary,
       posting_url: job.posting_url,
       notes: job.notes,
-      date_updated: job.date_updated
+      date_updated: job.date_updated,
     }
   end,
- }
+}

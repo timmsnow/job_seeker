@@ -1,5 +1,5 @@
 {
-  user_id: metric_table.user_id,
+  # user_id: metric_table.user_id,
   quick_apply: metric_table.quick_apply,
   intentional_apply: metric_table.intentional_apply,
   info_interview: metric_table.info_interview,

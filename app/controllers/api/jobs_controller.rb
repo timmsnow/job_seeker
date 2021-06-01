@@ -1,6 +1,7 @@
 class Api::JobsController < ApplicationController
   def index
-    @jobs = Job.where(user_id: current_user.id)
+    # @jobs = Job.where(user_id: current_user.id)
+    @jobs = @current_user.jobs
     render "index.json.jb"
   end
 
