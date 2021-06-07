@@ -19,4 +19,20 @@
       date_updated: job.date_updated,
     }
   end,
+  contacts: user.contacts.map do |contact|
+    {
+      job: contact.job.company_name,
+      name: contact.name,
+      email: contact.email,
+      job_title: contact.job_title,
+      linkedin_url: contact.linkedin_url,
+      phone: contact.phone,
+      date_contacted: contact.date_contacted,
+    }
+  end,
+# contacts: user.contacts.map do |contact|
+#   job: contact.job.company_name,
+#   name: contact.name,
+#   email: contact.email,
+# end
 }
