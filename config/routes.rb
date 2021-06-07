@@ -33,5 +33,7 @@ Rails.application.routes.draw do
     get "/metric_tables/:id" => "metric_tables#show"
     patch "/metric_tables/:id" => "metric_tables#update"
     get "/metric_tables/day/:id" => "metric_tables#day_index"
+    delete "/metric_tables/:id" => "metric_tables#destroy"
+
   end
 end
