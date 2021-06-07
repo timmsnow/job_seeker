@@ -5,4 +5,5 @@
   info_interview: metric_table.info_interview,
   white_boarding_minutes: metric_table.white_boarding_minutes,
   portfolio_minutes: metric_table.portfolio_minutes,
+  id: metric_table.id,
 }

@@ -29,14 +29,14 @@ class Api::MetricTablesController < ApplicationController
     if @metric_table.save
       render "show.json.jb"
     else
-      render json: { errors: @metric_table.error.full_messages }, status: bad_request
+      render json: { errors: @metric_table.errors.full_messages }, status: bad_request
     end
   end
 
   def update
     @metric_table = MetricTable.find(params[:id])
 
-    if current_user.id == @metric_table.user_id
+    # if current_user.id == @metric_table.user_id
       @metric_table.quick_apply = params[:quick_apply] || @metric_table.quick_apply
       @metric_table.intentional_apply = params[:intentional_apply] || @metric_table.intentional_apply
       @metric_table.info_interview = params[:info_interview] || @metric_table.info_interview
@@ -48,6 +48,16 @@ class Api::MetricTablesController < ApplicationController
       else
         render json: { errors: @metric_table.error.full_messages }, status: bad_request
       end
-    end
+    # end
+  end
+
+  def destroy
+    @metric_table = MetricTable.find(params[:id])
+    metric_table_id = params[:id]
+    # if current_user.id == @metric_table.user_id
+    @metric_table = MetricTable.find(metric_table_id)
+    @metric_table.destroy
+    render json: { message: "metric_table DESTROYED" }
+    # end
   end
 end
