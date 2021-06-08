@@ -1,9 +1,9 @@
 {
   # user_id: metric_table.user_id,
-  quick_apply: metric_table.quick_apply,
-  intentional_apply: metric_table.intentional_apply,
+  apply: metric_table.apply,
   info_interview: metric_table.info_interview,
   white_boarding_minutes: metric_table.white_boarding_minutes,
   portfolio_minutes: metric_table.portfolio_minutes,
+  breaks: metric_table.breaks,
   id: metric_table.id,
 }

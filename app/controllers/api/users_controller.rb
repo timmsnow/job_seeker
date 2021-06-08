@@ -28,8 +28,8 @@ class Api::UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @user.user_goals = {
-      quick_apply: params[:quick_apply],
-      intentional_apply: params[:intentional_apply],
+      apply: params[:apply],
+      breaks: params[:breaks],
       info_interview: params[:info_interview],
       white_boarding_minutes: params[:white_boarding_minutes],
       portfolio_minutes: params[:portfolio_minutes],

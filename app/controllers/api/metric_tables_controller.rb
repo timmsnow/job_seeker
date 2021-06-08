@@ -19,8 +19,8 @@ class Api::MetricTablesController < ApplicationController
     @metric_table = MetricTable.new(
       # user_id: current_user.id,
       user_id: params[:user_id],
-      quick_apply: 0,
-      intentional_apply: 0,
+      apply: 0,
+      breaks: 0,
       info_interview: 0,
       white_boarding_minutes: 0,
       portfolio_minutes: 0,
@@ -37,8 +37,8 @@ class Api::MetricTablesController < ApplicationController
     @metric_table = MetricTable.find(params[:id])
 
     # if current_user.id == @metric_table.user_id
-      @metric_table.quick_apply = params[:quick_apply] || @metric_table.quick_apply
-      @metric_table.intentional_apply = params[:intentional_apply] || @metric_table.intentional_apply
+      @metric_table.apply = params[:apply] || @metric_table.apply
+      @metric_table.breaks = params[:breaks] || @metric_table.breaks
       @metric_table.info_interview = params[:info_interview] || @metric_table.info_interview
       @metric_table.white_boarding_minutes = params[:white_boarding_minutes] || @metric_table.white_boarding_minutes
       @metric_table.portfolio_minutes = params[:portfolio_minutes] || @metric_table.portfolio_minutes
