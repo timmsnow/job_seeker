@@ -29,10 +29,10 @@ class Api::UsersController < ApplicationController
 
     @user.user_goals = {
       apply: params[:apply],
-      breaks: params[:breaks],
       info_interview: params[:info_interview],
       white_boarding_minutes: params[:white_boarding_minutes],
       portfolio_minutes: params[:portfolio_minutes],
+      breaks: params[:breaks],
     }
 
     @user.save
