@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_194805) do
+ActiveRecord::Schema.define(version: 2021_06_08_202032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,8 +43,8 @@ ActiveRecord::Schema.define(version: 2021_05_12_194805) do
   end
 
   create_table "metric_tables", force: :cascade do |t|
-    t.integer "quick_apply"
-    t.integer "intentional_apply"
+    t.integer "apply"
+    t.integer "breaks"
     t.integer "info_interview"
     t.integer "white_boarding_minutes"
     t.integer "portfolio_minutes"
