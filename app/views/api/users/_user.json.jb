@@ -21,6 +21,7 @@
   end,
   contacts: user.contacts.map do |contact|
     {
+      id: contact.id,
       job: contact.job.company_name,
       name: contact.name,
       email: contact.email,

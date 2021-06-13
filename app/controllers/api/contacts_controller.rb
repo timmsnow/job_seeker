@@ -19,7 +19,7 @@ class Api::ContactsController < ApplicationController
     if @contact.save
       render "show.json.jb"
     else
-      render json: {errors: @contact.error.full_messages}, status: bad_request
+      render json: { errors: @contact.error.full_messages }, status: bad_request
     end
   end
 
@@ -31,30 +31,28 @@ class Api::ContactsController < ApplicationController
   def update
     @contact = Contact.find(params[:id])
 
-    if current_user.id == @contact.user_id
-      @contact.job_id = params[:job_id] || @contact.job_id
-      @contact.name = params[:name] || @contact.name
-      @contact.email = params[:email] || @contact.email
-      @contact.job_title = params[:job_title] || @contact.job_title
-      @contact.linkedin_url = params[:linkedin_url] || @contact.linkedin_url
-      @contact.phone = params[:phone] || @contact.phone
-      @contact.date_contacted = params[:date_contacted] || @contact.date_contacted
+    @contact.job_id = params[:job_id] || @contact.job_id
+    @contact.name = params[:name] || @contact.name
+    @contact.email = params[:email] || @contact.email
+    @contact.job_title = params[:job_title] || @contact.job_title
+    @contact.linkedin_url = params[:linkedin_url] || @contact.linkedin_url
+    @contact.phone = params[:phone] || @contact.phone
+    @contact.date_contacted = params[:date_contacted] || @contact.date_contacted
 
-      if @contact.save
-        render "show.json.jb"
-      else
-        render json: {errors: @contact.error.full_messages}, status: bad_request
-      end
+    if @contact.save
+      render "show.json.jb"
+    else
+      render json: { errors: @contact.error.full_messages }, status: bad_request
     end
   end
 
   def destroy
-  @contact = Contact.find(params[:id])
-  if current_user.id == @contact.user_id
-    @contact.destroy
-    render json: {message: "the contact was destroyed"}
-  else
-    render json: {message: "unauthorized"}, status: bad_request
-  end 
+    @contact = Contact.find(params[:id])
+    if current_user.id == @contact.user_id
+      @contact.destroy
+      render json: { message: "the contact was destroyed" }
+    else
+      render json: { message: "unauthorized" }, status: bad_request
+    end
   end
 end
