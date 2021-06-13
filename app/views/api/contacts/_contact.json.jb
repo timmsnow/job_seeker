@@ -1,6 +1,6 @@
 {
-  contact_id: contact.id,
-  job_id: contact.job_id,
+  id: contact.id,
+  job: contact.job_id,
   name: contact.name,
   email: contact.email,
   job_title: contact.job_title,
