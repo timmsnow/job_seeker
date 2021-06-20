@@ -9,4 +9,16 @@
   notes: job.notes,
   date_updated: job.date_updated,
   user_id: job.user_id,
+  contacts: job.contacts.map do |contact|
+    {
+      id: contact.id,
+      job: contact.job.company_name,
+      name: contact.name,
+      email: contact.email,
+      job_title: contact.job_title,
+      linkedin_url: contact.linkedin_url,
+      phone: contact.phone,
+      date_contacted: contact.date_contacted,
+    }
+  end,
 }
