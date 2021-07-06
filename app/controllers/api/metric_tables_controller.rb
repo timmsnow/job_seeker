@@ -6,7 +6,7 @@ class Api::MetricTablesController < ApplicationController
 
   def day_index
     current_user_id = params[:id]
-    @metric_tables = MetricTable.where("user_id = ? AND created_at >= ?", current_user_id, 1.month.ago)
+    @metric_tables = MetricTable.where("user_id = ? AND created_at >= ?", current_user_id, 1.day.ago)
     render "index.json.jb"
   end
 
