@@ -6,7 +6,7 @@ class Api::ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(
-      user_id: current_user.id,
+      user_id: params[:user_id],
       job_id: params[:job_id],
       name: params[:name],
       email: params[:email],
