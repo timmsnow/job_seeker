@@ -1,24 +1,21 @@
-# README
+# Job Seeker: A web app for keeping track of all the elements of job hunting in the tech industry.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Job Seeker is a webapp designed with the coding bootcamp graduate in mind. With Job Seeker, the user can set daily job-seeking goals including application submissions, informational interviews, white-boarding practice, and more.
 
-Things you may want to cover:
+Some of the standout features of Job Seeker :
 
-* Ruby version
+-Sets Daily Goals for Application Submissions, Informational Interview Requests, White Boarding Practice, Portfolio Building, and those all-important breaks from the computer screen.
 
-* System dependencies
+-Monitors metrics daily to ensure that the user is reaching their daily goals
 
-* Configuration
+-Saves Potential Jobs in different categories to make for an easy user experience based on the users level of interaction with a company.
 
-* Database creation
+-Enables a Break Timer for individuals who struggle to prioritize breaks during a work day
 
-* Database initialization
+-Allows user to save contacts for potential networking in the future
 
-* How to run the test suite
+Set goals, save applications and contacts, and hold yourself accountable!
 
-* Services (job queues, cache servers, search engines, etc.)
+# Install the dependencies and build
 
-* Deployment instructions
-
-* ...
+This project was bootstrapped with [Ruby on Rails]
